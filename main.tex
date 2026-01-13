@@ -1,0 +1,174 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Medium Length Professional CV
+% LaTeX Template
+% Version 2.0 (8/5/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Rishi Shah 
+%
+% Important note:
+% This template requires the resume.cls file to be in the same directory as the
+% .tex file. The resume.cls file provides the resume style used for structuring the
+% document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{resume} % Use the custom resume.cls style
+
+\usepackage{fontspec}
+\setmainfont{Source Sans Pro}
+
+\usepackage{microtype}
+\linespread{0.97} %good spacing for resumes
+
+\usepackage[backend=biber,
+maxnames=2,
+style=authoryear]{biblatex}
+\addbibresource{jeherr.bib}
+
+\renewcommand*{\mkbibnamegiven}[1]{%
+  \ifitemannotation{highlight}
+    {\textbf{#1}}
+    {\ifitemannotation{highcorr}
+    {\textbf{#1 *}}
+    {\ifitemannotation{highequal}
+    {\textbf{#1 \textsuperscript{§}}}
+    {\ifitemannotation{equal}
+    {#1\textbf{\textsuperscript{§}}}
+    {#1}}}}}
+
+\renewcommand*{\mkbibnamefamily}[1]{%
+  \ifitemannotation{highlight}
+    {\textbf{#1}}
+    {\ifitemannotation{highcorr}
+    {\textbf{#1}}
+    {\ifitemannotation{highequal}
+    {\textbf{#1}}
+    {\ifitemannotation{equal}
+    {#1}
+    {#1}}}}}
+
+
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue
+}
+
+\usepackage[margin=0.6in]{geometry}
+\newcommand{\tab}[1]{\hspace{.2667\textwidth}\rlap{#1}}
+\newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
+\name{John E. Herr} % Your name
+
+\address{(319) 670-8252 \\ johnherr@gmail.com \\ \url{https://github.com/jeherr}}
+
+\begin{document}
+
+
+%----------------------------------------------------------------------------------------
+%	Summary
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Summary}
+
+Computational chemist \& machine‑learning scientist with 6+ years building deep‑learning models for molecular property prediction and force‑field development. Developed datasets with over 10 M conformations, authored 12 peer‑reviewed papers (1,700+ citations), and cut CPU cost of QM pipelines by up to 40\%. Proficient in Python, PyTorch, TensorFlow, RDKit, and HPC workflows.
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	Technical Skills
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Technical Skills}
+
+\begin{tabular}{ @{} l l @{} }
+\textbf{Cheminformatics:} & reaction prediction, large-scale data curation \\
+\textbf{Simulation Software:} & Q-Chem, ORCA, Psi4, PySCF, CP2K, VASP, Quantum ESPRESSO \\
+\textbf{Machine Learning:} & Graph networks, transformers, autoencoders, GANs \\
+\textbf{Programming:} & Python, PyTorch, TensorFlow, RDKit \\
+\end{tabular}
+
+\end{rSection}
+
+
+%----------------------------------------------------------------------------------------
+%	Education
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Education}
+
+{\bf University of Notre Dame du Lac} \hfill {\em August 2015 - May 2020}
+\newline Ph.D. Theoretical and Computational Chemistry
+
+{\bf University of Iowa}   \hfill {\em August 2011 - May 2014} 
+\newline B.S. Chemistry and Mathematics
+
+% {\bf Southeastern Community College} \hfill {\em August 2007 - July 2010}
+% \newline Associate of Arts
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	Research Experience
+%----------------------------------------------------------------------------------------
+
+% \begin{rSection}{Professional Experience}
+
+% {\bf Postdoctoral Research Assistant, Dr. John Chodera} \hfill {\em September 2021 - June 2022}
+% \newline co-designed SPICE dataset (700k drug‑like molecules, 17M conformers), trained transformer FFs achieving less than 1.0 kcal/mol MAE on off‑equilibrium geometries
+
+% {\bf Postdoctoral/Graduate Research Assistant, Dr. Olaf Wiest} \hfill {\em August 2018 - October 2020}
+% \newline implemented PyTorch GNN to predict organic reaction products/yields with top‑1 accuracy 18 pp and piloted on pharma proprietary set (>500k rxns), integrated real‑world yield data, delivering 0.27 R² external‑val, code adopted by 2 pharma partners
+
+% {\bf Graduate Research Assistant, Dr. John Parkhill} \hfill {\em August 2015 - August 2018}
+% \newline curated 10M‑conformation dataset (45k molecules) for TensorMol NN force‑field, automated conformer sampling \& DFT optimization on 80k‑core cluster, trained NNFF achieving 0.8 kcal/mol energy MAE \& 25 meV/Å force MAE, reduced cpu usage 40\% vs antecedent, co‑authored 7 publications incl. JACS \& Chem. Sci.; first‑author JCP Editor’s Pick on autoencoder chemical embeddings
+
+% \end{rSection}
+
+\begin{rSection}{Professional Experience}
+
+\textbf{Postdoctoral Research Assistant, Dr.\ John Chodera} \hfill \emph{Sept 2021 -- Jun 2022}
+\vspace{-0.4em}
+\begin{itemize}\itemsep -0.4em
+  \item co-built \emph{SPICE} dataset (700 k mols, 17 m confs); trained transformer ff with < 1 kcal/mol off-equilibrium MAE
+\end{itemize}
+
+\textbf{Postdoctoral/Graduate Research Assistant, Dr.\ Olaf Wiest} \hfill \emph{Aug 2018 -- Oct 2020}
+\vspace{-0.4em}
+\begin{itemize}\itemsep -0.4em
+  \item built pytorch gnn for rxn outcome/yield → +18 pp top-1 vs baseline
+  \item validated on 500 k proprietary rxns (R²=0.27); code adopted by 2 pharma partners
+\end{itemize}
+
+\textbf{Graduate Research Assistant, Dr.\ John Parkhill} \hfill \emph{Aug 2015 -- Aug 2018}
+\vspace{-0.4em}
+\begin{itemize}\itemsep -0.4em
+  \item curated 10 m-conf/45 k-mol dataset; automated dft on 80 k-core cluster
+  \item trained tensormol nn-ff (0.8 kcal/mol e mae, 25 mev/Å f mae) → –40 % cpu vs prior
+  \item led 7 pubs (jacs, chem sci) incl. jcp editor’s pick on chem embeddings
+\end{itemize}
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	Publications
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Selected Publications}
+
+\item \fullcite{eastman2023spice}
+\item \fullcite{saebi2023use}
+\item \fullcite{wang2022end}
+\item \fullcite{yao2018tensormol}
+
+\end{rSection}
+
+\clearpage
+
+\end{document}
