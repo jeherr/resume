@@ -11,7 +11,7 @@ jobs:
         with:
           root_file: resume.tex
           # change to xelatex if needed
-          compiler: xelatex
+          # compiler: xelatex
       - name: Upload PDF
         uses: actions/upload-artifact@v4
         with:
